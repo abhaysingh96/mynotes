@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "151004501212",
+    "project_id": "my-notes-app-by-abhay",
+    "storage_bucket": "my-notes-app-by-abhay.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151004501212:android:f2f205f3be757a6e705019",
+        "android_client_info": {
+          "package_name": "com.hello.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151004501212-3rcshotfl6q4c04q48j3sd529gd78hig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiOt8x5toA98-s0qgsHAe4Z79HSFfCGfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151004501212-3rcshotfl6q4c04q48j3sd529gd78hig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
