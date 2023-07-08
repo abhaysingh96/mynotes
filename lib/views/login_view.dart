@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer' as devtools show log;
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -39,7 +40,8 @@ class _LoginViewState extends State<LoginView> {
             autocorrect: false,
             keyboardType: TextInputType.emailAddress,
             controller: _email,
-            decoration: const InputDecoration(hintText: 'Enter your email here'),
+            decoration:
+                const InputDecoration(hintText: 'Enter your email here'),
           ),
           TextField(
             controller: _password,
@@ -55,17 +57,22 @@ class _LoginViewState extends State<LoginView> {
               final password = _password.text;
               try {
                 final userCredential = await FirebaseAuth.instance
-                    .signInWithEmailAndPassword(email: email, password: password);
-                
+                    .signInWithEmailAndPassword(
+                        email: email, password: password);
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/notes/',
+                  (route) => false,
+                );
+                // devtools.log(userCredential.toString());
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'user-not-found') {
-                  print('User not found');
+                  devtools.log('User not found');
                 }
                 if (e.code == 'wrong-password') {
-                  print('Password is wrong');
+                  devtools.log('Password is wrong');
                 } else {
-                  print('Something went wrong');
-                  print(e.code);
+                  devtools.log('Something went wrong');
+                  devtools.log(e.code);
                 }
               }
             },
@@ -74,7 +81,8 @@ class _LoginViewState extends State<LoginView> {
           TextButton(
               onPressed: () {
                 Navigator.of(context).pushNamedAndRemoveUntil(
-                  '/register/',(route) => false,
+                  '/register/',
+                  (route) => false,
                 );
               },
               child: const Text('New? Register Here')),
