@@ -1,6 +1,6 @@
 class DatabaseAlreadyOpenException implements Exception {}
 
-class UnableToGetDocumentDirectory implements Exception {}
+class UnableToGetDocumentsDirectory implements Exception {}
 
 class DatabaseIsNotOpen implements Exception {}
 
@@ -14,4 +14,4 @@ class CouldNotFindUser implements Exception {}
 
 class CouldNotFindNote implements Exception {}
 
-class UserAlreaduExists implements Exception {}
+class UserAlreadyExists implements Exception {}
